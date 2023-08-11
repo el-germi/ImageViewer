@@ -4,9 +4,9 @@ public class Main {
 	public static void main(String[] args) {
 		new Menu();
 		
-		//if(args != null && args.length >= 0)
-		//	System.out.println(args[0]);
-		//else return;
-		
+        /*System.out.println("AAAAAAAA");
+        for (String s : args) {
+            System.out.println(s);
+        }*/
 	}
 }

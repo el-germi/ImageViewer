@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 public class Menu extends JFrame {
     public Menu() {
         super("Alpha Viewer");
-        this.setSize(250, 150);
+        this.setSize(350, 250);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         JLabel myLabel = new JLabel("Drag something here!", SwingConstants.CENTER);
@@ -23,6 +23,8 @@ public class Menu extends JFrame {
                 System.exit(0);
             }
         });
+        MenuUtils.setMenus(this, MenuUtils.M("File", 'F',
+                MenuUtils.I("Open", 'O', e -> Viewer.make(FileUtils.openFile(FileUtils.IMAGES, null)))));
         this.setVisible(true);
     }
 }

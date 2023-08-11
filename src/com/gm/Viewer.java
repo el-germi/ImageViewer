@@ -31,7 +31,8 @@ public class Viewer extends JFrame {
         this.setSize(500, 500);
         var scrp = new JScrollPane(panel);
         this.getContentPane().add(scrp);
-        MenuUtils.setMenus(this, M("Channels", 'C', CG(this::redo, initialState, C("Blue"), C("Green"), C("Red"), C("Alpha"))));
+        MenuUtils.setMenus(this,
+                M("Channels", 'C', CG(this::redo, initialState, C("Blue"), C("Green"), C("Red"), C("Alpha"))));
         this.setVisible(true);
     }
 
@@ -70,10 +71,11 @@ public class Viewer extends JFrame {
     }
 
     public static void make(File f) {
-        try {
-            new Viewer(f);
-        } catch (Exception e) {
-            // do nothing
-        }
+        if (f != null)
+            try {
+                new Viewer(f);
+            } catch (Exception e) {
+                // do nothing
+            }
     }
 }
