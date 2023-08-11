@@ -21,6 +21,7 @@ class DragDropFiles extends DropTargetAdapter {
         new DropTarget(c, new DragDropFiles(dl));
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void drop(DropTargetDropEvent event) {
         event.acceptDrop(DnDConstants.ACTION_COPY);// Accept copy drops
