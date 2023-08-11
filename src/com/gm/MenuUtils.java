@@ -75,6 +75,8 @@ public final class MenuUtils {
             for (int i = 0; i < items.length; i++) {
                 final int fi = i;
                 items[i].addActionListener(e -> this.update(items[fi], e));
+                if (initialState != null)
+                    items[i].setSelected(((initialState >> i) & 1) > 0);
             }
         }
 
