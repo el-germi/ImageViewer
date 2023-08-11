@@ -15,7 +15,7 @@ public class Menu extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         JLabel myLabel = new JLabel("Drag something here!", SwingConstants.CENTER);
-        DragDropFiles.add(myLabel, Viewer::make);
+        DragDropFiles.add(myLabel, Viewer::make, FileUtils.IMAGES);
         this.getContentPane().add(BorderLayout.CENTER, myLabel);
         this.addComponentListener(new ComponentAdapter() {
             @Override
